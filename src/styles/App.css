@@ -14,10 +14,6 @@
   width: 100%;
 }
 
-.TableRow:hover {
-  cursor: pointer;
-}
-
 .SearchInput {
   margin: auto;
   width: 50%;

@@ -1,21 +1,22 @@
-import "../styles/DetailsModal.css";
-import * as React from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
-import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import PropTypes from "prop-types";
-import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import SkeletonTableLoader from "./SkeletonTableLoader";
-import fetchWithTimeout from "../helpers/fetchWithTimeout";
-import ErrorMessage from "./ErrorMessage";
+import Typography from "@mui/material/Typography";
+import PropTypes from "prop-types";
+import * as React from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { generateTradeDetailsURL } from "../helpers";
+import fetchWithTimeout from "../helpers/fetchWithTimeout";
+import "../styles/DetailsModal.css";
+import ErrorMessage from "./ErrorMessage";
+import SkeletonTableLoader from "./SkeletonTableLoader";
 
 const modalBoxStyle = {
   position: "absolute",
@@ -92,7 +93,7 @@ function DetailsModal(props) {
         const dynamicKey = Object.keys(krakenResult)[0];
         details = slicedResult[dynamicKey].map((tradeArray, index) => {
           return {
-            id: 999, // response does not return id - best to use uuid()
+            id: uuidv4(), // NOTE: response does not return id, so we generate unique one
             price: tradeArray[0] || "No data", // Using indexes directly can be dangerous || to prevent brake
             quantity: tradeArray[1] || "No Data",
             time: tradeArray[2] || "No data",
@@ -109,7 +110,7 @@ function DetailsModal(props) {
           const { data: singleTradeData } = tradesData; // singleTradeData is Array as well
           for (const trade of singleTradeData) {
             details.push({
-              id: trade.id,
+              id: uuidv4(), // Huobi returns too large ids that overflow and have elements with equal ids
               price: trade.price,
               "buy/sell": trade.direction,
               quantity: trade.amount,

@@ -1,6 +1,5 @@
-import * as React from "react";
-import PropTypes from "prop-types";
 import TextField from "@mui/material/TextField";
+import PropTypes from "prop-types";
 
 function SearchInput({ onInputChange, onKeyUp, value }) {
   return (

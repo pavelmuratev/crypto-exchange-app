@@ -18,9 +18,9 @@ import {
   fetchPriceKraken,
   useInterval,
 } from "../helpers";
-import ErrorMessage from "./ErrorMessage";
 import "../styles/ResultsTable.css";
 import DetailsModal from "./DetailsModal";
+import ErrorMessage from "./ErrorMessage";
 import SkeletonTableLoader from "./SkeletonTableLoader";
 
 function getComparator(order, orderBy) {

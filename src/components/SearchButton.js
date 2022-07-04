@@ -1,7 +1,6 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import LoadingButton from "@mui/lab/LoadingButton";
 import SearchIcon from "@mui/icons-material/Search";
+import LoadingButton from "@mui/lab/LoadingButton";
+import PropTypes from "prop-types";
 
 function SearchButton({ handleClick, isDisabled }) {
   return (

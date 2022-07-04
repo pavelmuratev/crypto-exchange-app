@@ -90,7 +90,6 @@ function ResultsTable() {
   /*/
   useInterval(() => {
     if (pairResults) {
-      console.log("fetch called inside interval");
       setReload((reload) => !reload);
     }
   }, 4000); // We can pause or throttle refetch by passing null or increment delay, for example when user is on another tab

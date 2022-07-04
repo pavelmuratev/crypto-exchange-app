@@ -13,6 +13,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import SkeletonTableLoader from "./SkeletonTableLoader";
+import fetchWithTimeout from "../helpers/fetchWithTimeout";
 import ErrorMessage from "./ErrorMessage";
 import { generateTradeDetailsURL } from "../helpers";
 
@@ -46,8 +47,7 @@ function DetailsModal(props) {
 
       // Fetch is called twice in development mode when Strict Mode is on
       // Ref: https://github.com/facebook/react/issues/24502
-
-      const response = await fetch(url);
+      const response = await fetchWithTimeout(url, { timeout: 4000 });
       const result = await response.json();
 
       if (isApiSubscribed) {

@@ -36,8 +36,8 @@ function Home() {
   }
 
   return (
-    <div className="SearchInput">
-      <h3>Crypto Exchange Search</h3>
+    <div id="home-div" className="SearchInput">
+      <h3 id="search-header-text">Crypto Exchange Search</h3>
       <SearchInput
         onInputChange={handleInputChange}
         value={inputValue}

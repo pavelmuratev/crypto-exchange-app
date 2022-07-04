@@ -119,7 +119,7 @@ function DetailsModal(props) {
         open={open || location.pathname === `/${pair}/details`}
         onClose={props.handleClose}
       >
-        <div className="DetailsModal">
+        <div id="no-details-div" className="DetailsModal">
           {fetchError ? (
             <ErrorMessage message="Unable to fetch market details" />
           ) : (

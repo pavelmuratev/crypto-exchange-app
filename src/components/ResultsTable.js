@@ -196,14 +196,14 @@ function ResultsTable() {
 
   if (fetchError) {
     return (
-      <div className="ResultsTable">
+      <div id="no-results-div" className="ResultsTable">
         <ErrorMessage message="Unable to fetch market data" />
       </div>
     );
   } else {
     return (
-      <div className="ResultsTable">
-        <h3 id="pair-results">Results</h3>
+      <div id="results-div" className="ResultsTable">
+        <h3 id="pair-results-header">Results</h3>
         {pairResults ? (
           <SortableTable />
         ) : (

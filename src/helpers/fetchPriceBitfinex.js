@@ -1,12 +1,16 @@
 import fetchWithTimeout from "./fetchWithTimeout";
 
 export const fetchPriceBitfinex = async (pair) => {
+  if (!pair) {
+    return { price: "Unavailable", pair: "" };
+  }
+
   const upperCassedPair = pair.toUpperCase();
 
   const response = await fetchWithTimeout(
     `https://api-pub.bitfinex.com/v2/ticker/t${upperCassedPair}`,
     {
-      mode: "no-cors",
+      mode: "no-cors", // NOTE: no-cors enabled since CORS is not configured and breaks request
       headers: {
         "Access-Control-Allow-Origin": "*",
       },

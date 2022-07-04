@@ -17,7 +17,7 @@ function Home() {
 
   function handleClick() {
     // re-route
-    navigate(`/${inputValue.split("/").join("")}`, {
+    navigate(`/${inputValue.split("/").join("").toLowerCase()}`, {
       state: { rawInput: inputValue },
     });
   }

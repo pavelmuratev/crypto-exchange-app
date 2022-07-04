@@ -55,7 +55,6 @@ function ResultsTable() {
     // NOTE: We use variable to prevent setting state more than once
     let isApiSubscribed = true;
     const fetchData = async () => {
-      console.log("FETCH CALLED");
       // NOTE: Each fetch will be called twice in dev mode when Strict Mode is on
       // Ref: https://github.com/facebook/react/issues/24502
       const krakenData = await fetchPriceKraken(pair);

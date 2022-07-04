@@ -1,9 +1,10 @@
 import { descendingComparator } from "./descendingComparator";
-import { generateTradeDetailsURL } from "./generateTradeDetailsURL";
-import { fetchPriceHuobi } from "./fetchPriceHuobi";
-import { fetchPriceBitfinex } from "./fetchPriceBitfinex";
 import { fetchPriceBinance } from "./fetchPriceBinance";
+import { fetchPriceBitfinex } from "./fetchPriceBitfinex";
+import { fetchPriceHuobi } from "./fetchPriceHuobi";
 import { fetchPriceKraken } from "./fetchPriceKraken";
+import { generateTradeDetailsURL } from "./generateTradeDetailsURL";
+import { parseFetchDetailsResult } from "./parseFetchDetailsResult";
 import { useInterval } from "./useInterval";
 
 export {
@@ -12,6 +13,7 @@ export {
   fetchPriceBitfinex,
   fetchPriceKraken,
   fetchPriceBinance,
+  parseFetchDetailsResult,
   useInterval,
   generateTradeDetailsURL,
 };

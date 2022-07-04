@@ -1,0 +1,10 @@
+.DetailsModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(200, 194, 194);
+  width: 400;
+  min-height: 5vh;
+  /* border: 1px solid #000; */
+}
